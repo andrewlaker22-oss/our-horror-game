@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Horror Game Template"
-run/main_scene="res://intro.tscn"
+run/main_scene="res://Maps/forest_ritual.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.png"
 

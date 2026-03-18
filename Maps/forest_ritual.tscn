@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://df7x8h2n4v3q5"]
+
+[ext_resource type="PackedScene" uid="uid://c7t8r2m8d3l6w" path="res://Player/player.tscn" id="1_a2b3c"]
+[ext_resource type="PackedScene" uid="uid://d3y8h4j9k2m1n" path="res://Assets/Landscape/mountain.gltf" id="2_d4e5f"]
+[ext_resource type="PackedScene" uid="uid://b1v2x3c4z5m6n" path="res://Assets/Landscape/LandscapeModel.gltf" id="3_g6h7i"]
+[ext_resource type="Texture2D" uid="uid://d1c2b3a4z5m6n" path="res://Assets/Materials/Textures/wood.png" id="4_j8k9l"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x1y2z"]
+sky_top_color = Color(0.02, 0.05, 0.1, 1)
+sky_horizon_color = Color(0.05, 0.1, 0.15, 1)
+ground_bottom_color = Color(0.01, 0.02, 0.05, 1)
+ground_horizon_color = Color(0.05, 0.1, 0.15, 1)
+
+[sub_resource type="Sky" id="Sky_a1b2c"]
+sky_material = SubResource("ProceduralSkyMaterial_x1y2z")
+
+[sub_resource type="Environment" id="Environment_c3d4e"]
+background_mode = 2
+sky = SubResource("Sky_a1b2c")
+ambient_light_source = 2
+ambient_light_color = Color(0.1, 0.15, 0.25, 1)
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.05, 0.1, 0.15, 1)
+fog_density = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5g6h"]
+albedo_color = Color(0.2, 0.3, 0.1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i7j8k"]
+material = SubResource("StandardMaterial3D_f5g6h")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l9m0n"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ritual"]
+albedo_color = Color(0.8, 0.1, 0.1, 1)
+emission_enabled = true
+emission = Color(0.9, 0.2, 0.1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fire"]
+material = SubResource("StandardMaterial3D_ritual")
+top_radius = 1.0
+bottom_radius = 1.5
+height = 0.5
+
+[node name="ForestRitual" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c3d4e")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 20, 0)
+light_color = Color(0.5, 0.6, 0.8, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_i7j8k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_l9m0n")
+
+[node name="Player" parent="." instance=ExtResource("1_a2b3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 10)
+
+[node name="RitualSite" type="Node3D" parent="."]
+
+[node name="Bonfire" type="MeshInstance3D" parent="RitualSite"]
+mesh = SubResource("CylinderMesh_fire")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RitualSite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+light_color = Color(0.9, 0.4, 0.1, 1)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 15.0
+
+[node name="Trees" type="Node3D" parent="."]
