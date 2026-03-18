@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcjdxkgid2cg5"]
+
+[ext_resource type="Script" path="res://NPCS/dialogue_box.gd" id="1_ts4u0"]
+[ext_resource type="AudioStream" uid="uid://bemc5twvrio3u" path="res://Maps/Stab_Knife_00.mp3" id="2_4noik"]
+[ext_resource type="Theme" uid="uid://c3vfyg2uplmmh" path="res://Menus/InterfaceTheme.tres" id="2_muu8b"]
+
+[node name="DialogueBox" type="ColorRect"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -438.0
+offset_top = -187.0
+offset_right = 457.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.501961)
+script = ExtResource("1_ts4u0")
+
+[node name="Name" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -48.0
+offset_right = 171.0
+offset_bottom = -5.0
+theme = ExtResource("2_muu8b")
+text = "Name"
+
+[node name="Text" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 19.0
+offset_right = -47.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_muu8b")
+text = "Text dialogue"
+scroll_following = true
+
+[node name="Indicator" type="Polygon2D" parent="."]
+position = Vector2(-269, -129)
+scale = Vector2(3, 4.33333)
+color = Color(0.752941, 0.0509804, 0.0862745, 1)
+polygon = PackedVector2Array(374, 62, 386, 62, 380, 68)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioLetter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4noik")
+volume_db = -20.0

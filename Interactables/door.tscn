@@ -1,0 +1,296 @@
+[gd_scene load_steps=17 format=4 uid="uid://bhbdx20co5oy6"]
+
+[ext_resource type="PackedScene" uid="uid://b5y44tthjkk5y" path="res://Interactables/interact_generic.tscn" id="1_m3uyl"]
+[ext_resource type="Script" path="res://Interactables/door.gd" id="2_qs0gs"]
+[ext_resource type="Texture2D" uid="uid://dbo5jjkgh4qb5" path="res://Assets/Models/door_wood_2.png" id="2_rw4ma"]
+[ext_resource type="AudioStream" uid="uid://c6exvku2ekw2u" path="res://Interactables/doorOpen_1.ogg" id="4_lhiyo"]
+[ext_resource type="AudioStream" uid="uid://dm4y53bw7i7e6" path="res://Interactables/doorClose_1.ogg" id="5_nwkiw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bcxf"]
+resource_name = "wood_2"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_rw4ma")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_axceo"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -0.269005, 1.88102, 3.6139, 0.272882),
+"format": 34359742465,
+"index_count": 120,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABwAMAAYABwANAAwABgAFAAcABgAEAAUAAAAPAAQAAAAIAA8AAgAEAAYAAgAAAAQABwABAAMABwAFAAEACgAXAA0ACgAUABcADgARAAkADgASABEABgALAAIABgAMAAsABQAJAAEABQAOAAkABAAOAAUABAAPAA4AAwANAAcAAwAKAA0AAgAKAAMAAgALAAoAAQAIAAAAAQAJAAgADwASAA4ADwATABIACAATAA8ACAAQABMACQAQAAgACQARABAACwAUAAoACwAVABQADQAWAAwADQAXABYADAAVAAsADAAWABUA"),
+"name": "wood_2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACAvwAAgL8AY307AACAvxRKJ0AAY307AACAvwAAgL8Su4m+AACAvxRKJ0ASu4m+YIphPwAAgL8AY307YIphPxRKJ0AAY307YIphPwAAgL8Su4m+YIphPxRKJ0ASu4m+6mdvv2QeYL/gbrW76mdvv61RH0DgbrW76mdvv61RH0CQ6oS+6mdvv2QeYL+Q6oS+TPJQP2QeYL+Q6oS+TPJQP61RH0CQ6oS+TPJQP61RH0DgbrW7TPJQP2QeYL/gbrW76mdvv2QeYL/uu8C96mdvv61RH0Duu8C9TPJQP61RH0Duu8C9TPJQP2QeYL/uu8C96mdvv61RH0Bwfjm+6mdvv2QeYL9wfjm+TPJQP2QeYL9wfjm+TPJQP61RH0Bwfjm+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xb3de"]
+resource_name = "door_Cube002"
+_surfaces = [{
+"aabb": AABB(-1, -1, -0.269005, 1.88102, 3.6139, 0.272882),
+"attribute_data": PackedByteArray("AADAPgAAgD8AAAA+AACAPgAAAD4AAIA+AADAPgAAgD8AACA/AACAPwAAYD8AAIA+AABgPwAAgD4AACA/AACAPwAAwD4AAEA/AAAAPgAAAD8AAAA+AAAAPwAAwD4AAEA/AAAgPwAAQD8AAGA/AAAAPwAAYD8AAAA/AAAgPwAAQD8AAMA+AACAPgAAwD4AAIA+AADAPgAAgD4AAMA+AACAPgAAID8AAIA+AAAgPwAAgD4AACA/AACAPgAAID8AAIA+AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AADAPgAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAAD4AAIA+AAAAPgAAgD4AAMA+AACAPwAAwD4AAIA/AABgPwAAgD4AAGA/AACAPgAAID8AAIA/AAAgPwAAgD8AAGA/AAAAPwAAYD8AAAA/AAAgPwAAQD8AACA/AABAPwAAAD4AAAA/AAAAPgAAAD8AAMA+AABAPwAAwD4AAEA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AADAPgAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAIA+AAAgPwAAgD4AACA/AACAPgAAID8AAIA+AADAPgAAgD4AAMA+AACAPgAAwD4AAIA+AADAPgAAgD4AAAA+AACAPgAAwD4AAIA/AABgPwAAgD4AACA/AACAPwAAID8AAIA+AAAgPwAAgD4AAMA+AACAPgAAwD4AAIA+AABgPwAAAD8AACA/AABAPwAAAD4AAAA/AADAPgAAQD8AAMA+AAAAPwAAwD4AAAA/AAAgPwAAAD8AACA/AAAAPw=="),
+"format": 34359742487,
+"index_count": 120,
+"index_data": PackedByteArray("AAAMAAQAAAAIAAwAHAAxABgAHAA1ADEAGwAXAB8AGwATABcAAgA+ABIAAgAgAD4ACQARABkACQABABEAHgAGAA4AHgAWAAYAKABPADYAKABIAE8AOgBCACQAOgBFAEIAGgAsAAoAGgAyACwAFQAlAAUAFQA7ACUAEAA5ABQAEAA9ADkADQA3AB0ADQApADcACwAqAA8ACwAuACoABwAiAAMABwAmACIAPABEADgAPABGAEQAIQBHAD8AIQBAAEcAJwBBACMAJwBDAEEALwBJACsALwBLAEkANABMADAANABOAEwAMwBKAC0AMwBNAEoA"),
+"material": SubResource("StandardMaterial3D_2bcxf"),
+"name": "wood_2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 80,
+"vertex_data": PackedByteArray("AACAvwAAgL8AY307AACAvwAAgL8AY307AACAvwAAgL8AY307AACAvwAAgL8AY307AACAvxRKJ0AAY307AACAvxRKJ0AAY307AACAvxRKJ0AAY307AACAvxRKJ0AAY307AACAvwAAgL8Su4m+AACAvwAAgL8Su4m+AACAvwAAgL8Su4m+AACAvwAAgL8Su4m+AACAvxRKJ0ASu4m+AACAvxRKJ0ASu4m+AACAvxRKJ0ASu4m+AACAvxRKJ0ASu4m+YIphPwAAgL8AY307YIphPwAAgL8AY307YIphPwAAgL8AY307YIphPwAAgL8AY307YIphPxRKJ0AAY307YIphPxRKJ0AAY307YIphPxRKJ0AAY307YIphPxRKJ0AAY307YIphPwAAgL8Su4m+YIphPwAAgL8Su4m+YIphPwAAgL8Su4m+YIphPwAAgL8Su4m+YIphPxRKJ0ASu4m+YIphPxRKJ0ASu4m+YIphPxRKJ0ASu4m+YIphPxRKJ0ASu4m+6mdvv2QeYL/gbrW76mdvv2QeYL/gbrW76mdvv2QeYL/gbrW76mdvv2QeYL/gbrW76mdvv61RH0DgbrW76mdvv61RH0DgbrW76mdvv61RH0DgbrW76mdvv61RH0DgbrW76mdvv61RH0CQ6oS+6mdvv61RH0CQ6oS+6mdvv61RH0CQ6oS+6mdvv61RH0CQ6oS+6mdvv2QeYL+Q6oS+6mdvv2QeYL+Q6oS+6mdvv2QeYL+Q6oS+6mdvv2QeYL+Q6oS+TPJQP2QeYL+Q6oS+TPJQP2QeYL+Q6oS+TPJQP2QeYL+Q6oS+TPJQP2QeYL+Q6oS+TPJQP61RH0CQ6oS+TPJQP61RH0CQ6oS+TPJQP61RH0CQ6oS+TPJQP61RH0CQ6oS+TPJQP61RH0DgbrW7TPJQP61RH0DgbrW7TPJQP61RH0DgbrW7TPJQP61RH0DgbrW7TPJQP2QeYL/gbrW7TPJQP2QeYL/gbrW7TPJQP2QeYL/gbrW7TPJQP2QeYL/gbrW76mdvv2QeYL/uu8C96mdvv2QeYL/uu8C96mdvv61RH0Duu8C96mdvv61RH0Duu8C9TPJQP61RH0Duu8C9TPJQP61RH0Duu8C9TPJQP2QeYL/uu8C9TPJQP2QeYL/uu8C96mdvv61RH0Bwfjm+6mdvv61RH0Bwfjm+6mdvv2QeYL9wfjm+6mdvv2QeYL9wfjm+TPJQP2QeYL9wfjm+TPJQP2QeYL9wfjm+TPJQP61RH0Bwfjm+TPJQP61RH0Bwfjm+AAD/f/9/////fwAA////v/9/+4j///8/NpD/f////z8AAP9//3////9/A3f///8//3///wAA/782kP9/////PwAA/3//f////38AAP///78C9///////v///x+////+/AAD/f/9///8C9wAA////v/9///8AAP+////H7////7/Ib/9/////P/9/AAD///+//3/7iP///z////9//3///8hv/3////8//38Dd////z//f///AAD/v////3//f///AADH7////7//fwAA////vwL3//////+/////f/9///8AAMfv////vwL3AAD///+//3///wAA/7////9//3////9/+4j///8//3///////782kP9/////P////3////+//38AAP///7//fwN3////PzaQ/3////8/////f////7//fwAA////vwL3AAD///+////H7////7////9/////vwL3//////+//3///////7///8fv////v////3////+/AAD/f////78AAMfv////vwL3//////+//3///////78AAP9/////vwAAx+////+//38AAP///78C9wAA////vwAA/3////+/yG//f////z//fwAA////v/9/A3f///8/AAD/f////7/Ib/9/////P/9/+4j///8//3///////7//f///////v////3////+//38AAP///7////9/////vwAA/3////+//38AAP///78AAP9/////v/9///////+//38AAP///7////9/////v/9///////+/////f////78AAP9/////v/9///////+/AAD/f////7//fwAA////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_axceo")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8sika"]
+_surfaces = [{
+"aabb": AABB(-1.71951, -1.88299, -0.0870178, 1.75138, 3.36482, 0.0870479),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AwABAAIAAwAAAAEABQAHAAQABQAGAAcAAgAEAAcAAgABAAQAAwAHAAYAAwACAAcAAAAGAAUAAAADAAYAAAAEAAEAAAAFAAQA"),
+"name": "wood_2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("Dxncv9QF8b8AIKk3Dxncv7isvT8AIKk3gIECPbisvT8AIKk3gIECPdQF8b8AIKk3Dxncv7isvT9gNrK9Dxncv9QF8b9gNrK9gIECPdQF8b9gNrK9gIECPbisvT9gNrK9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_amnww"]
+resource_name = "door_Cube003"
+_surfaces = [{
+"aabb": AABB(-1.71951, -1.88299, -0.0870178, 1.75138, 3.36482, 0.0870479),
+"attribute_data": PackedByteArray("4yOVPngKEj7jI5U+eAoSPsEGgT0AQmk98ZEKP3gKEj4p328/AEJpPfGRCj94ChI+Kd9vP3RSbj/xkQo/PAXJPvGRCj88Bck+4yOVPjwFyT7BBoE9dFJuP+MjlT48Bck+8ZEKP56CZD/8bXA/XutrP/GRCj+egmQ/4yOVPp6CZD/jI5U+noJkP1IgeT1e62s/4yOVPp6CJD9SIHk9gPYwPeMjlT6egiQ//G1wP4D2MD3xkQo/noIkP/GRCj+egiQ/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("CgAEAAYACgACAAQAEQAVAA0AEQATABUABwAOABYABwAFAA4ACwAXABQACwAIABcAAQASABAAAQAJABIAAAAMAAMAAAAPAAwA"),
+"material": SubResource("StandardMaterial3D_2bcxf"),
+"name": "wood_2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("Dxncv9QF8b8AIKk3Dxncv9QF8b8AIKk3Dxncv9QF8b8AIKk3Dxncv7isvT8AIKk3Dxncv7isvT8AIKk3Dxncv7isvT8AIKk3gIECPbisvT8AIKk3gIECPbisvT8AIKk3gIECPbisvT8AIKk3gIECPdQF8b8AIKk3gIECPdQF8b8AIKk3gIECPdQF8b8AIKk3Dxncv7isvT9gNrK9Dxncv7isvT9gNrK9Dxncv7isvT9gNrK9Dxncv9QF8b9gNrK9Dxncv9QF8b9gNrK9Dxncv9QF8b9gNrK9gIECPdQF8b9gNrK9gIECPdQF8b9gNrK9gIECPdQF8b9gNrK9gIECPbisvT9gNrK9gIECPbisvT9gNrK9gIECPbisvT9gNrK9AAD/f/9/AAD/fwAA////v/9//3//f///AAD/f/9/AAD/f/9//3////9///////+//3//f/9/////f///////v////3//f////38AAP///7//f/9//3///////3//f///AAD/f/9/AAD//////3////9///////+/AAD/f/9/AAD/fwAA////v///////f////38AAP///7///////3///////3//f/////////9/////f///////v////3//f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8sika")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lk7te"]
+data = PackedVector3Array(0.0319, -1.883, 0, -1.7195, 1.4818, 0, 0.0319, 1.4818, 0, 0.0319, -1.883, 0, -1.7195, -1.883, 0, -1.7195, 1.4818, 0, -1.7195, -1.883, -0.087, 0.0319, 1.4818, -0.087, -1.7195, 1.4818, -0.087, -1.7195, -1.883, -0.087, 0.0319, -1.883, -0.087, 0.0319, 1.4818, -0.087, 0.0319, 1.4818, 0, -1.7195, 1.4818, -0.087, 0.0319, 1.4818, -0.087, 0.0319, 1.4818, 0, -1.7195, 1.4818, 0, -1.7195, 1.4818, -0.087, 0.0319, -1.883, 0, 0.0319, 1.4818, -0.087, 0.0319, -1.883, -0.087, 0.0319, -1.883, 0, 0.0319, 1.4818, 0, 0.0319, 1.4818, -0.087, -1.7195, -1.883, 0, 0.0319, -1.883, -0.087, -1.7195, -1.883, -0.087, -1.7195, -1.883, 0, 0.0319, -1.883, 0, 0.0319, -1.883, -0.087, -1.7195, -1.883, 0, -1.7195, 1.4818, -0.087, -1.7195, 1.4818, 0, -1.7195, -1.883, 0, -1.7195, -1.883, -0.087, -1.7195, 1.4818, -0.087)
+
+[sub_resource type="Animation" id="Animation_n7k16"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/DoorOutside/DoorInside:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6gns8"]
+resource_name = "door_close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/DoorOutside/DoorInside:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.309, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SoundsDoor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SoundsDoor:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_nwkiw")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SoundsDoor:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ql71n"]
+resource_name = "door_open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/DoorOutside/DoorInside:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.309, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SoundsDoor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SoundsDoor:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_lhiyo")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SoundsDoor:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_v5rlx"]
+resource_name = "locked_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/DoorOutside/DoorInside:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.261799, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SoundsDoor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SoundsDoor:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_nwkiw")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SoundsDoor:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dy4fb"]
+_data = {
+"RESET": SubResource("Animation_n7k16"),
+"door_close": SubResource("Animation_6gns8"),
+"door_open": SubResource("Animation_ql71n"),
+"locked_door": SubResource("Animation_v5rlx")
+}
+
+[node name="Door" instance=ExtResource("1_m3uyl")]
+script = ExtResource("2_qs0gs")
+isLocked = false
+keyPath = null
+type = "Door"
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0726919, 1.90386, 0)
+
+[node name="door" type="Node3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077737, 0, 0.103108)
+
+[node name="DoorOutside" type="MeshInstance3D" parent="door" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00589955, 1.02408, 0.000477135)
+mesh = SubResource("ArrayMesh_xb3de")
+skeleton = NodePath("")
+
+[node name="DoorInside" type="MeshInstance3D" parent="door/DoorOutside" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.784335, 1.00753, -0.0941286)
+mesh = SubResource("ArrayMesh_amnww")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="door/DoorOutside/DoorInside" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door/DoorOutside/DoorInside/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_lk7te")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_dy4fb")
+}
+
+[node name="SoundsDoor" type="AudioStreamPlayer3D" parent="." index="3"]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

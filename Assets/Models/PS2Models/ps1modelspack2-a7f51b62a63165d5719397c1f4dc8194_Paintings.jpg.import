@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c4ymixji5qc7c"
+path.s3tc="res://.godot/imported/ps1modelspack2-a7f51b62a63165d5719397c1f4dc8194_Paintings.jpg-6b027f7028673147b9a8c20eca3e29ec.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "05f8e009ffeb5cf1784a1f55eb523213"
+}
+
+[deps]
+
+source_file="res://Assets/Models/PS2Models/ps1modelspack2-a7f51b62a63165d5719397c1f4dc8194_Paintings.jpg"
+dest_files=["res://.godot/imported/ps1modelspack2-a7f51b62a63165d5719397c1f4dc8194_Paintings.jpg-6b027f7028673147b9a8c20eca3e29ec.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

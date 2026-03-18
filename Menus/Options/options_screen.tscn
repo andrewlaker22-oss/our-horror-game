@@ -1,0 +1,243 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcg3can2muy18"]
+
+[ext_resource type="Theme" uid="uid://c3vfyg2uplmmh" path="res://Menus/InterfaceTheme.tres" id="1_ipo83"]
+[ext_resource type="Script" path="res://Menus/Options/options_screen.gd" id="2_1gqrq"]
+
+[node name="OptionsScreen" type="Panel"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -256.0
+offset_right = 394.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ipo83")
+script = ExtResource("2_1gqrq")
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 25.0
+offset_right = 317.0
+offset_bottom = 52.0
+current_tab = 0
+tab_count = 3
+tab_0/title = "Audio"
+tab_1/title = "Video"
+tab_2/title = "Controls"
+
+[node name="ButtonsHBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 442.0
+offset_right = 789.0
+offset_bottom = 503.0
+
+[node name="CloseButton" type="Button" parent="ButtonsHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ipo83")
+text = "Close"
+
+[node name="MenuButton" type="Button" parent="ButtonsHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ipo83")
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="ButtonsHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ipo83")
+text = "Quit Game"
+
+[node name="AudioTab" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -158.0
+offset_right = 282.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AudioTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AudioTab/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+horizontal_alignment = 1
+
+[node name="MusicHSlider" type="HSlider" parent="AudioTab/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -50.0
+max_value = 10.0
+value = 10.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AudioTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AudioTab/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="SFXHSlider" type="HSlider" parent="AudioTab/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -50.0
+max_value = 10.0
+
+[node name="ControlsTab" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -158.0
+offset_right = 282.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlsTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlsTab/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sensibility"
+horizontal_alignment = 1
+
+[node name="SensibilityHSlider" type="HSlider" parent="ControlsTab/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.001
+max_value = 0.5
+step = 0.005
+value = 0.011
+
+[node name="VideoTab" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -158.0
+offset_right = 282.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VideoTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VideoTab/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Screen Resolution"
+horizontal_alignment = 1
+
+[node name="ResolutionButton" type="OptionButton" parent="VideoTab/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+selected = 1
+item_count = 3
+popup/item_0/text = "800x600"
+popup/item_1/text = "1280x720"
+popup/item_1/id = 1
+popup/item_2/text = "1920x1080"
+popup/item_2/id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VideoTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VideoTab/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fullscreen"
+horizontal_alignment = 1
+
+[node name="FullscreenCheckbox" type="CheckBox" parent="VideoTab/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="QuitGamePanel" type="Window" parent="."]
+visible = false
+
+[node name="QuitGameMenuContainer" type="VBoxContainer" parent="QuitGamePanel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.5
+offset_top = -133.5
+offset_right = 230.5
+offset_bottom = 134.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="QuitGamePanel/QuitGameMenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="QuitGamePanel/QuitGameMenuContainer/HBoxContainer2"]
+modulate = Color(1, 0.0604473, 0.122593, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quit Game?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuitGamePanel/QuitGameMenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QYesButton" type="Button" parent="QuitGamePanel/QuitGameMenuContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ipo83")
+text = "YES"
+
+[node name="QNoButton" type="Button" parent="QuitGamePanel/QuitGameMenuContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ipo83")
+text = "NO"
+
+[connection signal="tab_changed" from="TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="pressed" from="ButtonsHBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="ButtonsHBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="ButtonsHBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="AudioTab/HBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="AudioTab/HBoxContainer2/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
+[connection signal="drag_ended" from="ControlsTab/HBoxContainer/SensibilityHSlider" to="." method="_on_sensibility_h_slider_drag_ended"]
+[connection signal="item_selected" from="VideoTab/HBoxContainer/ResolutionButton" to="." method="_on_resolution_button_item_selected"]
+[connection signal="toggled" from="VideoTab/HBoxContainer2/FullscreenCheckbox" to="." method="_on_fullscreen_checkbox_toggled"]
+[connection signal="close_requested" from="QuitGamePanel" to="." method="_on_quit_game_panel_close_requested"]
+[connection signal="pressed" from="QuitGamePanel/QuitGameMenuContainer/HBoxContainer/QYesButton" to="." method="_on_q_yes_button_pressed"]
+[connection signal="pressed" from="QuitGamePanel/QuitGameMenuContainer/HBoxContainer/QNoButton" to="." method="_on_quit_game_panel_close_requested"]
