@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1v2x3c4z5m6n" path="res://Assets/Landscape/LandscapeModel.gltf" id="3_g6h7i"]
 [ext_resource type="Texture2D" uid="uid://d1c2b3a4z5m6n" path="res://Assets/Materials/Textures/wood.png" id="4_j8k9l"]
 [ext_resource type="PackedScene" uid="uid://EnemyUidPlaceholder" path="res://Enemy/enemy.tscn" id="5_enemy"]
+[ext_resource type="PackedScene" uid="uid://EnemyUidPlaceholder" path="res://Enemy/enemy.tscn" id="5_enemy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x1y2z"]
 sky_top_color = Color(0.02, 0.05, 0.1, 1)
@@ -107,7 +108,42 @@ light_energy = 5.0
 shadow_enabled = true
 omni_range = 15.0
 
+[node name="Cultists" type="Node3D" parent="RitualSite"]
+
+[node name="Cultist_1" parent="RitualSite/Cultists" instance=ExtResource("5_enemy")]
+transform = Transform3D(-0.87, 0, -0.50, 0, 1, 0, 0.50, 0, -0.87, 2.00, 0, 3.46)
+
+[node name="Cultist_2" parent="RitualSite/Cultists" instance=ExtResource("5_enemy")]
+transform = Transform3D(-0.87, 0, 0.50, 0, 1, 0, -0.50, 0, -0.87, -2.00, 0, 3.46)
+
+[node name="Cultist_3" parent="RitualSite/Cultists" instance=ExtResource("5_enemy")]
+transform = Transform3D(0.00, 0, 1.00, 0, 1, 0, -1.00, 0, 0.00, -4.00, 0, 0.00)
+
+[node name="Cultist_4" parent="RitualSite/Cultists" instance=ExtResource("5_enemy")]
+transform = Transform3D(0.87, 0, 0.50, 0, 1, 0, -0.50, 0, 0.87, -2.00, 0, -3.46)
+
+[node name="Cultist_5" parent="RitualSite/Cultists" instance=ExtResource("5_enemy")]
+transform = Transform3D(0.87, 0, -0.50, 0, 1, 0, 0.50, 0, 0.87, 2.00, 0, -3.46)
+
+[node name="Cultist_6" parent="RitualSite/Cultists" instance=ExtResource("5_enemy")]
+transform = Transform3D(0.00, 0, -1.00, 0, 1, 0, 1.00, 0, 0.00, 4.00, 0, -0.00)
+
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+light_color = Color(0.9, 0.4, 0.1, 1)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 15.0
+
 [node name="Trees" type="Node3D" parent="."]
+[node name="Tombstones" type="Node3D" parent="."]
+[ext_resource type="Script" path="res://Maps/ritual_props.gd" id="ritual_script"]
+[node name="Altar" type="CSGBox3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material = ExtResource("material_altar")
+[node name="BloodPentagram" type="CSGPolygon3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 0.01, 0, 0, 0, 5, 0, 0.01, 0)
+material = ExtResource("material_blood")
+
 [node name="Tree_1" parent="Trees" instance=ExtResource("3_g6h7i")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.39, 0, 6.00)
 
@@ -144,3 +180,42 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.39, 0, -6.00)
 [node name="Tree_12" parent="Trees" instance=ExtResource("3_g6h7i")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.00, 0, -0.00)
 
+[node name="Tree_1" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.39, 0, 6.00)
+
+[node name="Tree_2" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.00, 0, 10.39)
+
+[node name="Tree_3" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00, 0, 12.00)
+
+[node name="Tree_4" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.00, 0, 10.39)
+
+[node name="Tree_5" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.39, 0, 6.00)
+
+[node name="Tree_6" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.00, 0, 0.00)
+
+[node name="Tree_7" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.39, 0, -6.00)
+
+[node name="Tree_8" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.00, 0, -10.39)
+
+[node name="Tree_9" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.00, 0, -12.00)
+
+[node name="Tree_10" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.00, 0, -10.39)
+
+[node name="Tree_11" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.39, 0, -6.00)
+
+[node name="Tree_12" parent="Trees" instance=ExtResource("3_g6h7i")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.00, 0, -0.00)
+
+
+[node name="ritual_props" type="Node" parent="."]
+script = ExtResource("ritual_script")
